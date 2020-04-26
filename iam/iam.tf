@@ -1,3 +1,8 @@
+provider "aws" {
+    region = "us-east-1"
+    shared_credentials_file = "/root/.aws/credentials"
+}
+
 resource "aws_iam_user" "test-user" {
   name = "test-user-delete"
 
