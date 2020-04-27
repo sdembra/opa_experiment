@@ -1,4 +1,4 @@
-package ssh_all
+package sg
 
 sgs = sgs {
 all := input.planned_values.root_module.resources
@@ -39,8 +39,8 @@ ingress_zero_cidr_to_port(ib, port) {
   #not ingress_self_only(ib)
 }
 
-default deny = true
-deny {
+default allowed = false
+allowed {
 num_zero_cidr_for_22 := count(zero_cidr_sgs_for_port_22)
-num_zero_cidr_for_22 != 0
+num_zero_cidr_for_22 == 0
 }

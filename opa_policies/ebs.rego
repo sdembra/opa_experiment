@@ -1,4 +1,4 @@
-package ebs_verify_encryption
+package ebs
 num_volumes = num {
     all := input.planned_values.root_module.resources
     vol := [res |  res:= all[_]; res.type == "aws_ebs_volume"]

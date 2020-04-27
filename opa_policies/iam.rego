@@ -1,4 +1,4 @@
-package iam_wildcard_policy_verification
+package iam
 iam_policies = policies {
 all := input.planned_values.root_module.resources
 policies := [res |  res:= all[_]; contains(res.type,"aws_iam_user_policy") ]
